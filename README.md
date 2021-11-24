@@ -67,6 +67,110 @@ POSTGRES_PASSWORD="123456"
 ### Funcionamiento de los endpoint.
 
 #### Usuarios.
+listar usuarios
+1. GET `/users` lista los usuarios de base de datos 
+resultado ejemplo
+```json
+[
+    {
+        "id": 1,
+        "usuario": "jrodriguez",
+        "nombre_completo": "Jonnathan Rodriguez",
+        "tipo": "CLIENTE",
+        "fecha_registro": "2018-05-21"
+    },
+    {
+        "id": 2,
+        "usuario": "ocastro",
+        "nombre_completo": "Oscar Castro",
+        "tipo": "CLIENTE",
+        "fecha_registro": "2020-06-01"
+    }
+]
+
+```
+
+2. POST `/users` crea un nuevo usuario
+- Parametros
+```json
+    {
+        "usuario":"123",
+        "nombre_completo":"Test",
+        "tipo":"AFILIADO"
+    }
+```
+3. GET `/users/:entity` consulta por id o por nombre
+- Parametros: cambiamos :entity por ´id´ o ´nombre´, se envia por el body el nombre o id 
+example id:
+    GET `/users/id`
+ ```json
+    {
+        "identify":"1"
+    }
+```
+example nombre 
+   
+    GET `/users/nombre`
+ ```json
+    {
+        "identify":"nombre"
+    }
+```
+#### Descuentos.
+listar descuentos
+1. GET `/discounts` lista los descuentos de base de datos 
+resultado ejemplo
+```json
+[
+    {
+        "id": 1,
+        "tipo_descuento": "AFILIACION",
+        "porcentaje_descuento": 10
+    },
+    {
+        "id": 2,
+        "tipo_descuento": "EMPLEADO",
+        "porcentaje_descuento": 30
+    },
+    {
+        "id": 3,
+        "tipo_descuento": "CLIENTE",
+        "porcentaje_descuento": 5
+    }
+]
+```
+
+2. POST `/discounts` crea un descuento 
+- Parametros
+```json
+ {
+    "tipo_descuento":"test",
+    "porcentaje_descuento":10
+}
+```
+3. GET `/discounts/:type` consulta los descuentos por tipo
+- Parametros: cambiamos :type por el valor que se desea 
+example id:
+    GET `/discounts/AFILIADO`
+
+respuesta
+
+ ```json
+    {
+        "response": 10
+    }
+```
+#### Facturas.
+
+1. POST `/invoice` crea una factura 
+- Parametros
+```json
+{
+    "id_usuario":1,
+    "tipo_compra":"ROPA",
+    "valor_compra":50000
+}
+```
 
 
 
