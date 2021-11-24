@@ -1,3 +1,4 @@
+
 create database "code_challenge" ;
 
 create table usuarios (
@@ -28,23 +29,20 @@ create table descuentos(
 
 insert into descuentos (tipo_descuento, porcentaje_descuento) values('AFILIACION', 10);
 insert into descuentos (tipo_descuento, porcentaje_descuento) values('EMPLEADO', 30);
-insert into descuentos (tipo_descuento, porcentaje_descuento) values('CLIENTE_DOS_ANOS', 5);
+insert into descuentos (tipo_descuento, porcentaje_descuento) values('CLIENTE', 5);
 
 
 create table facturas(
 	id serial,
 	id_usuario serial not null,
 	tipo_compra character varying(30) not null, 
-	valor_compra integer,
-	id_descuento serial,
-	porcentaje_descuento integer,
-	valor_descuento integer,
-	valor_total integer,
+	valor_compra decimal(10,2),
+	porcentaje_descuento decimal(10,2),
+	descuento_por_porcentaje decimal(10,2),
+	descuento_por_cada_cien decimal(10,2),
+	valor_descuento decimal(10,2),
+	valor_total decimal(10,2),
 	constraint pk_facturas primary key (id),
 	constraint fk_facturas_id_usuario foreign key (id_usuario) references usuarios (id) match simple,
-	constraint fk_facturas_id_descuento foreign key (id_descuento) references descuentos (id) match simple,
 	constraint ch_factura_tipo_compra check(tipo_compra in('COMESTIBLES','ELECTRODOMESTICO','ROPA') )
 );
-
-
-
