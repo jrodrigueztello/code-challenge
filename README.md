@@ -68,7 +68,7 @@ POSTGRES_PASSWORD="123456"
 
 #### Usuarios.
 listar usuarios
-1. `/users` lista los usuarios de base de datos 
+1. GET `/users` lista los usuarios de base de datos 
 resultado ejemplo
 ```json
 [
@@ -90,6 +90,32 @@ resultado ejemplo
 
 ```
 
+2. POST `/users` crea un nuevo usuario
+- Parametros
+```json
+    {
+        "usuario":"123",
+        "nombre_completo":"Test",
+        "tipo":"AFILIADO"
+    }
+```
+3. GET `/users/:entity` consulta por id o por nombre
+- Parametros: cambiamos :entity por ´id´ o ´nombre´, se envia por el body el nombre o id 
+example id:
+    GET `/users/id`
+ ```json
+    {
+        "identify":"1"
+    }
+```
+example nombre 
+   
+    GET `/users/id`
+ ```json
+    {
+        "identify":"nombre"
+    }
+```
 #### Descuentos.
 
 #### Facturas.
