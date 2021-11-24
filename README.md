@@ -67,6 +67,32 @@ POSTGRES_PASSWORD="123456"
 ### Funcionamiento de los endpoint.
 
 #### Usuarios.
+listar usuarios
+1. `/users` lista los usuarios de base de datos 
+resultado ejemplo
+```json
+[
+    {
+        "id": 1,
+        "usuario": "jrodriguez",
+        "nombre_completo": "Jonnathan Rodriguez",
+        "tipo": "CLIENTE",
+        "fecha_registro": "2018-05-21"
+    },
+    {
+        "id": 2,
+        "usuario": "ocastro",
+        "nombre_completo": "Oscar Castro",
+        "tipo": "CLIENTE",
+        "fecha_registro": "2020-06-01"
+    }
+]
+
+```
+
+#### Descuentos.
+
+#### Facturas.
 
 
 

@@ -28,7 +28,7 @@ const invoiceController = require('./controllers/invoice');
 invoiceRouter.post('/', invoiceController.createDiscount);
 
 router.use('/', indexRouter);
-router.use('/customers', customersRouter);
+router.use('/users', customersRouter);
 router.use('/discounts', discountsRouter);
 router.use('/invoice', invoiceRouter);
 module.exports = router;
