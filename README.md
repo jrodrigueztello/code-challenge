@@ -1,7 +1,7 @@
 # code-challenge
 - Author: Jonnathan Andres Rodriguez Tello
 
-- ** Descripción:** Este desarrollo es un API de facturaciones con descuentos, dependiendo de 
+- Descripción: Este desarrollo es un API de facturaciones con descuentos, dependiendo de 
     - tipo de usuario (CLIENTE, AFILIADO, EMPLEADO)
     - años de ser cliente
     - descuentos por cada 100 dolares
@@ -20,6 +20,7 @@ https://github.com/jrodrigueztello/code-challenge.git
 - Postgres
 - Eslint
 - Prettier
+
 # Requisitos para iniciar el API
 
 
@@ -63,5 +64,10 @@ POSTGRES_PASSWORD="123456"
 1. cd api
 2. npm run start
 
+### Funcionamiento de los endpoint.
 
-- test site `none`
+#### Usuarios.
+
+
+
+
