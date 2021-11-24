@@ -26,6 +26,8 @@ discountsRouter.get('/:type', discountsController.getPercentageByType);
 const invoiceRouter = express.Router();
 const invoiceController = require('./controllers/invoice');
 invoiceRouter.post('/', invoiceController.createDiscount);
+invoiceRouter.get('/', invoiceController.getInvoice);
+invoiceRouter.get('/:id', invoiceController.getInvoiceById);
 
 router.use('/', indexRouter);
 router.use('/users', customersRouter);

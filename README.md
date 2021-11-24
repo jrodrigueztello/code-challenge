@@ -27,7 +27,7 @@ https://github.com/jrodrigueztello/code-challenge.git
 ### Clone project
 
 1. `git clone https://github.com/jrodrigueztello/code-challenge.git`
-2. `cd ceb-provider/automation-task-worker`
+2. `cd code-challenge/api`
 3. `npm i`
 
 
@@ -44,7 +44,7 @@ crear el archivo .env dentro de la carpeta `api`
 
 
 ### Environment variables
-
+agregar las credenciales necesarias para la conexion a Postgres
 ```ruby
 
 PORT=4001
@@ -172,6 +172,49 @@ respuesta
 }
 ```
 
+2. GET `/invoice` lista todas las factura 
+- example
+```json
+[
+    {
+        "id": 1,
+        "id_usuario": 1,
+        "tipo_compra": "ROPA",
+        "valor_compra": "50000.00",
+        "porcentaje_descuento": "5.00",
+        "descuento_por_porcentaje": "10000.00",
+        "descuento_por_cada_cien": "2000.00",
+        "valor_descuento": "12000.00",
+        "valor_total": "38000.00"
+    },
+    {
+        "id": 2,
+        "id_usuario": 4,
+        "tipo_compra": "COMESTIBLES",
+        "valor_compra": "50000.00",
+        "porcentaje_descuento": "30.00",
+        "descuento_por_porcentaje": "1666.67",
+        "descuento_por_cada_cien": "0.00",
+        "valor_descuento": "1666.67",
+        "valor_total": "48333.33"
+    }
+]
+```
+3. GET `/invoice/:id` consulta una factura por id 
+- example `/invoice/1`
+```json
+{
+    "id": 1,
+    "id_usuario": 1,
+    "tipo_compra": "ROPA",
+    "valor_compra": "50000.00",
+    "porcentaje_descuento": "5.00",
+    "descuento_por_porcentaje": "10000.00",
+    "descuento_por_cada_cien": "2000.00",
+    "valor_descuento": "12000.00",
+    "valor_total": "38000.00"
+}
+```
 
 
 
