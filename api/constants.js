@@ -9,7 +9,7 @@ module.exports = {
     NOMBRE: 'nombre',
   },
   MODELS: {
-    DESCUENTOS: 'descuentos',
+    DESCUENTOS: ' ',
     FACTURAS: 'facturas',
     USUARIOS: 'usuarios',
   },
