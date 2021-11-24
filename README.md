@@ -110,15 +110,67 @@ example id:
 ```
 example nombre 
    
-    GET `/users/id`
+    GET `/users/nombre`
  ```json
     {
         "identify":"nombre"
     }
 ```
 #### Descuentos.
+listar descuentos
+1. GET `/discounts` lista los descuentos de base de datos 
+resultado ejemplo
+```json
+[
+    {
+        "id": 1,
+        "tipo_descuento": "AFILIACION",
+        "porcentaje_descuento": 10
+    },
+    {
+        "id": 2,
+        "tipo_descuento": "EMPLEADO",
+        "porcentaje_descuento": 30
+    },
+    {
+        "id": 3,
+        "tipo_descuento": "CLIENTE",
+        "porcentaje_descuento": 5
+    }
+]
+```
 
+2. POST `/discounts` crea un descuento 
+- Parametros
+```json
+ {
+    "tipo_descuento":"test",
+    "porcentaje_descuento":10
+}
+```
+3. GET `/discounts/:type` consulta los descuentos por tipo
+- Parametros: cambiamos :type por el valor que se desea 
+example id:
+    GET `/discounts/AFILIADO`
+
+respuesta
+
+ ```json
+    {
+        "response": 10
+    }
+```
 #### Facturas.
+
+1. POST `/invoice` crea una factura 
+- Parametros
+```json
+{
+    "id_usuario":1,
+    "tipo_compra":"ROPA",
+    "valor_compra":50000
+}
+```
 
 
 

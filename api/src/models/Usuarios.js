@@ -3,7 +3,7 @@ const constants = require('../../constants');
 const sequelize = require('../../database/database');
 const { MODELS } = constants;
 const Users = sequelize.define(
-  MODELS.USUARIOS,
+  'usuarios',
   {
     id: {
       type: Sequelize.INTEGER,

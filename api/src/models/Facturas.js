@@ -3,7 +3,7 @@ const constants = require('../../constants');
 const sequelize = require('../../database/database');
 const { MODELS } = constants;
 const Facturas = sequelize.define(
-  MODELS.FACTURAS,
+  'facturas',
   {
     id: {
       type: Sequelize.INTEGER,

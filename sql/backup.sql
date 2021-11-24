@@ -27,7 +27,7 @@ create table descuentos(
 	constraint pk_descuentos primary key (id)
 );
 
-insert into descuentos (tipo_descuento, porcentaje_descuento) values('AFILIACION', 10);
+insert into descuentos (tipo_descuento, porcentaje_descuento) values('AFILIADO', 10);
 insert into descuentos (tipo_descuento, porcentaje_descuento) values('EMPLEADO', 30);
 insert into descuentos (tipo_descuento, porcentaje_descuento) values('CLIENTE', 5);
 
